@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer} from '@react-navigation/native'
+import Home from './components/screens/Home';
+import Explore from './components/screens/Explore';
 
 export default function App() {
+  const TabNav = createBottomTabNavigator()
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <NavigationContainer>
+        <TabNav.Navigator screenOptions={{
+          tabBarActiveTintColor: "orange" ,
+          tabBarInactiveTintColor: "black",
+          tabBarLabelStyle: {
+            fontSize: 14,
+            paddingBottom: 5,
+            fontWeight: 600,
+          },
+        }}>
+          <TabNav.Screen name='Home' component={Home} options={{
+            
+          }}/>
+          <TabNav.Screen name='Explore' component={Explore}/>
+        </TabNav.Navigator>
+      </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
