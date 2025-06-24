@@ -20,8 +20,10 @@ export default function App() {
             fontWeight: 600,
           },
           tabBarStyle: {
-            height: 75,
-            paddingTop: 0
+            height: 85,
+            paddingTop: 0,
+            borderTopWidth: 0.3,
+            borderColor: '#888',
           }
         }}>
           <TabNav.Screen name='HOME' component={Home}  options={{
