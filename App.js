@@ -6,8 +6,13 @@ import Cart from './components/screens/Cart';
 import MyAccount from './components/screens/MyAccount';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import { useFonts } from "expo-font";
+import Invitations from './components/screens/Invitations';
 
 export default function App() {
+  useFonts({
+    'montas-regular': require('./assets/fonts/Montas-Regular.otf'),
+  })
   const TabNav = createBottomTabNavigator()
   return (
       <NavigationContainer>
@@ -42,6 +47,12 @@ export default function App() {
             headerShown: false,
             tabBarIcon:({focused})=>(
               <Ionicons name='bag-outline' size={18} color={focused ? '#165963' : '#608a8f'}/>
+            )
+          }}/>
+          <TabNav.Screen name='INVITATIONS' component={Invitations} options={{
+            headerShown: false,
+            tabBarIcon:({focused})=>(
+              <Ionicons name='heart-outline' size={18} color={focused ? '#165963' : '#608a8f'}/>
             )
           }}/>
           <TabNav.Screen name='MY ACCOUNT' component={MyAccount} options={{

@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 26,
-        fontWeight: 'bold',
+        fontFamily: 'montas-regular',
         color: '#165963'
     },
     description: {

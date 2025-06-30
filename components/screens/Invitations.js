@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-const Home = () => {
+const Invitations = () => {
   return (
     <View style={{ flex: 1, marginVertical: 50 }}>
-      <Text style={{fontFamily: 'montas-regular'}}>Home</Text>
+      <Text style={{fontFamily: 'montas-regular'}}>Invitations</Text>
     </View>
   );
 }; 
 
-export default Home;
+export default Invitations;
